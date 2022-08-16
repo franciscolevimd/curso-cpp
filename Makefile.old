@@ -14,10 +14,13 @@ OBJS := $(OBJS:%.cpp=%.o)
 OBJS := $(notdir $(OBJS))
 OBJS := $(addprefix $(OBJ_DIR)/, $(OBJS))
 
+# CXX = g++
+# CXXFLAGS = -Wall -g
+# CXXFLAGS += -std=c++17
+
 CXX = g++
 CXXFLAGS = -Wall -g
 CXXFLAGS += -std=c++17
-
 
 all: $(TARGET_EXEC)
 
