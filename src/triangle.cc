@@ -4,17 +4,34 @@
 
 using namespace std;
 
-Triangle::Triangle(float vertex_1, float vertex_2, float vertex_3) : Figure(3) {
-    vertex_[0] = vertex_1;
-    vertex_[1] = vertex_2;
-    vertex_[2] = vertex_3;
+Triangle::Triangle(const Triangle& triangle) {
     cout << "Triangle constructor" << endl;
+    Figure::operator=(triangle);
+}
+
+Triangle::Triangle(Point v1, Point v2, Point v3) : Figure(3) {
+    cout << "Triangle constructor" << endl;
+    set_vertex(v1, v2, v3);
 }
 
 Triangle::~Triangle() {
     cout << "Triangle destructor" << endl;
 }
 
-void Triangle::showVertex() {
-    cout << "(" << vertex_[0] << "," << vertex_[1] << "," << vertex_[2] << ")" << endl;
+void Triangle::set_v1(Point v1) {
+    vertex_[0] = v1;
+}
+
+void Triangle::set_v2(Point v2) {
+    vertex_[1] = v2;
+}
+
+void Triangle::set_v3(Point v3) {
+    vertex_[2] = v3;
+}
+
+void Triangle::set_vertex(Point v1, Point v2, Point v3) {
+    vertex_[0] = v1;
+    vertex_[1] = v2;
+    vertex_[2] = v3;
 }
