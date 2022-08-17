@@ -3,7 +3,7 @@
 using namespace std;
 
 ostream& operator<<(ostream& os, const Point& point) {
-    return os << "(" << point.x_ << "," << point.y_ << ")";
+    return os << "(" << point.x_ << ", " << point.y_ << ")";
 }
 
 Point::Point(const Point& p) {
