@@ -1,12 +1,20 @@
 #ifndef FIGURE_H_
 #define FIGURE_H_
+
+#include <ostream>
+#include "point.h"
+
 class Figure {
-    protected:
-    unsigned short total_vertex_;
-    public:
-    Figure(unsigned short total_vertex);
-    ~Figure();
-    void set_total_vertex(unsigned short total_vertex);
-    inline unsigned short total_vertex() { return total_vertex_; }
+  friend std::ostream& operator<<(std::ostream& os, const Figure& figure);
+protected:
+  unsigned short total_vertex_;
+  Point* vertex_;
+public:
+  Figure(const Figure& figure);
+  Figure(unsigned short total_vertex = 3);
+  ~Figure();
+  inline unsigned short total_vertex() const { return total_vertex_; }
+  Figure& operator=(const Figure& other);
 };
+
 #endif // FIGURE_H_
