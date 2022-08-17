@@ -3,6 +3,7 @@
 #include "punto.h"
 #include "estatico.h"
 #include "character.h"
+#include "triangle.h"
 
 using namespace std;
 
@@ -58,10 +59,14 @@ int main(int argc, char **argv) {
 	// cout << "counter: " << Estatico::getCounter() << endl;
 	// delete estatico5;
 	// cout << "counter: " << Estatico::getCounter() << endl;
-	Character* character = new Character(23, 33);
-	character->showData();
-	modify(*character, 150, 200);
-	character->showData();
-	delete character;
+	// Character* character = new Character(23, 33);
+	// character->showData();
+	// modify(*character, 150, 200);
+	// character->showData();
+	// delete character;
+	Triangle *figure = new Triangle(0.3f, 5.2f, 0.0f);
+	cout << "figure.vertex: " << figure->total_vertex() << endl;
+	figure->showVertex();
+	delete figure;
 	return 0;
 }
